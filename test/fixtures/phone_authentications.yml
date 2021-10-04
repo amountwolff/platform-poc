@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  phone: MyString
+  authentication_method: MyString
+  status: MyString
+  request_id: 
+  authentication_url: MyString
+  platform_tenant: one
+  session: one
+
+two:
+  phone: MyString
+  authentication_method: MyString
+  status: MyString
+  request_id: 
+  authentication_url: MyString
+  platform_tenant: two
+  session: two

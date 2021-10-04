@@ -1,0 +1,8 @@
+# packwerk package
+
+enforce_dependencies: true
+
+enforce_privacy: false
+
+dependencies:
+ - "engines/platform"

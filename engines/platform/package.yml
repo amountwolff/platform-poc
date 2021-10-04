@@ -1,0 +1,7 @@
+# packwerk package
+
+enforce_dependencies: true
+
+enforce_privacy: false
+
+# no dependencies

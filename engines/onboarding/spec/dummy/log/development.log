@@ -1,0 +1,38 @@
+  [1m[35m (130.3ms)[0m  [1m[35mCREATE DATABASE "development_db" ENCODING = 'unicode'[0m
+  [1m[35m (48.7ms)[0m  [1m[35mCREATE DATABASE "test_db" ENCODING = 'unicode'[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOnboardingSessions (20210924000117)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "onboarding_sessions" ("id" bigserial primary key, "status" character varying, "expires_at" timestamp, "platform_tenant_id" bigint NOT NULL, "user_account_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_29a0e1477a"
+FOREIGN KEY ("platform_tenant_id")
+  REFERENCES "platform_tenants" ("id")
+, CONSTRAINT "fk_rails_b55a02624c"
+FOREIGN KEY ("user_account_id")
+  REFERENCES "user_accounts" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (152.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "development_db"[0m
+  [1m[35m (102.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "test_db"[0m
+  [1m[35m (136.9ms)[0m  [1m[35mCREATE DATABASE "development_db" ENCODING = 'unicode'[0m
+  [1m[35m (104.2ms)[0m  [1m[35mCREATE DATABASE "test_db" ENCODING = 'unicode'[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8146912425687811020)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOnboardingSessions (20210924000117)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "onboarding_sessions" ("id" bigserial primary key, "status" character varying, "expires_at" timestamp, "platform_tenant_id" bigint NOT NULL, "user_account_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_29a0e1477a"
+FOREIGN KEY ("platform_tenant_id")
+  REFERENCES "platform_tenants" ("id")
+, CONSTRAINT "fk_rails_b55a02624c"
+FOREIGN KEY ("user_account_id")
+  REFERENCES "user_accounts" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8146912425687811020)[0m
