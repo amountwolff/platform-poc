@@ -6,3 +6,4 @@ enforce_privacy: false
 
 dependencies:
  - "engines/platform"
+ - "engines/user"
