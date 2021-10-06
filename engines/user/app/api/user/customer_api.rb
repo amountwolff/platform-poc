@@ -3,7 +3,7 @@ require "grape/route_helpers"
 
 module User
   class CustomerAPI < Grape::API
-    include User::Concerns::Errors
+    include Platform::Concerns::Errors
     
     version 'v1', using: :header, vendor: 'amount'
     format :json
@@ -55,7 +55,7 @@ module User
       end
       put do
         unless !!current_account.customer
-          error!({ :error_msg => "record_does_not_exist", :error_code => Platform::ErrorCodes::RECORD_DOESNT_EXISTS }, 401)
+          error!({ :error_msg => "record_does_not_exist", :error_code => Platform::ErrorCodes::RECORD_DOESNT_EXIST }, 401)
         end
 
         current_account.customer.update!(name: params[:name], date_of_birth: params[:date_of_birth], ssn: params[:ssn])

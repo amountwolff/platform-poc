@@ -3,7 +3,7 @@ require "grape/route_helpers"
 
 module User
   class AuthAPI < Grape::API
-    include User::Concerns::Errors
+    include Platform::Concerns::Errors
     
     version 'v1', using: :header, vendor: 'amount'
     format :json

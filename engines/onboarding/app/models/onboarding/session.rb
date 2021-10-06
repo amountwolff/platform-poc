@@ -1,7 +1,7 @@
 module Onboarding
   class Session < Platform::ApplicationRecord
-    Platform::Concerns::BelongsToTenant
+    include Platform::Concerns::BelongsToTenant
 
-    belongs_to :user_account
+    belongs_to :user_account, optional: true, foreign_key: "user_account_id"
   end
 end
