@@ -62,6 +62,8 @@ gem 'zeitwerk'
 gem 'grape'
 gem 'grape-route-helpers'
 gem 'grape-swagger'
+gem 'grape-entity'
+gem 'grape-swagger-entity'
 gem 'jwt'
 
 gem "letter_opener", group: :development

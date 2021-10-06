@@ -9,6 +9,8 @@ Bundler.require(*Rails.groups)
 
 module HostApp
   class Application < Rails::Application
+    config.api_only = true
+    
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
@@ -29,6 +31,6 @@ module HostApp
       end if File.exists?(env_file)
     end
 
-    config.paths.add 'packages', glob: '*\/app\/{*,*\/concerns}', eager_load: true
+    config.paths.add 'engines', glob: '*\/app\/{*,*\/concerns,*\/entities}', eager_load: true
   end
 end

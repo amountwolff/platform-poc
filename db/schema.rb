@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 2021_09_30_173446) do
     t.index ["user_account_id"], name: "index_onboarding_sessions_on_user_account_id"
   end
 
+  create_table "platform_api_keys", force: :cascade do |t|
+    t.string "token"
+    t.datetime "expires_at"
+    t.bigint "platform_tenant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["platform_tenant_id"], name: "index_platform_api_keys_on_platform_tenant_id"
+  end
+
   create_table "platform_shards", force: :cascade do |t|
     t.string "domain"
     t.string "shard"
@@ -92,6 +101,7 @@ ActiveRecord::Schema.define(version: 2021_09_30_173446) do
 
   add_foreign_key "onboarding_sessions", "platform_tenants"
   add_foreign_key "onboarding_sessions", "user_accounts"
+  add_foreign_key "platform_api_keys", "platform_tenants"
   add_foreign_key "user_accounts", "platform_tenants"
   add_foreign_key "user_authentication_tokens", "platform_tenants"
   add_foreign_key "user_authentication_tokens", "user_accounts"

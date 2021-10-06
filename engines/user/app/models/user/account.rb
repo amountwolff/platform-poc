@@ -9,8 +9,8 @@ module User
            :confirmable, :passwordless_authenticatable,
            :trackable
 
-    has_one :user_customer
-    has_many :authentication_tokens
+    has_one :customer, foreign_key: "user_account_id"
+    has_many :authentication_tokens, foreign_key: "user_account_id"
 
     def password_required?
      false

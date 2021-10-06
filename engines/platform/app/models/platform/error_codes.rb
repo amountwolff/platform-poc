@@ -1,0 +1,8 @@
+module Platform
+  module ErrorCodes
+    DEVELOPER_KEY_MISSING = 1001
+    BAD_AUTHENTICATION_PARAMS = 2002
+    RECORD_ALREADY_EXISTS = 3003
+    RECORD_DOESNT_EXIST = 3004
+  end
+end
