@@ -19,7 +19,6 @@ module User
         success: Entities::AccountWithCustomer
       }
       get do
-        byebug
         status 200
         present current_account, with: Entities::AccountWithCustomer
       end

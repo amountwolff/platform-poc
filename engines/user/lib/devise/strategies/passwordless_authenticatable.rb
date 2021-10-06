@@ -1,3 +1,5 @@
+#TODO: DELETE
+
 require 'devise/strategies/authenticatable'
 require_relative '../../../app/mailers/user/account_mailer'
 module Devise
@@ -7,7 +9,6 @@ module Devise
       include User::Engine.routes.url_helpers
 
       def authenticate!
-        byebug
         if params[:email].present?
           resource = User::Account.find_by(email: params[:email])
 

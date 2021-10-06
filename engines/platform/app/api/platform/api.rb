@@ -6,7 +6,7 @@ module Platform
     include Platform::Concerns::Errors
 
     helpers Platform::Helpers::AuthenticationHelper
-    before { restrict_access_to_developers }
+    before { restrict_access_to_developers! }
     
     version 'v1', using: :header, vendor: 'amount'
     format :json

@@ -1,3 +1,5 @@
+#TODO: DELETE
+
 require_relative('../strategies/passwordless_authenticatable')
 
 module Devise

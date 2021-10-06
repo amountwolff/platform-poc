@@ -17,7 +17,6 @@ module User
       end
 
       def authenticate!
-        byebug
         unless signed_in?
           #AuditLog.create data: 'unauthenticated user access'
           error!({ :error_msg => "authentication_error", :error_code => Platform::ErrorCodes::BAD_AUTHENTICATION_PARAMS }, 401)
